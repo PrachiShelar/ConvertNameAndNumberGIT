@@ -1,0 +1,46 @@
+﻿<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        Translate Name and number
+    </div>
+    <div class='panel-body'>
+        <div class='table-responsive'>
+          <form novalidate  (ngSubmit)="onSubmit(user)" [formGroup]="userfrm">
+            <label>
+              <span>Full name</span>
+              <input type="text"
+                     name="name"
+                     placeholder="Your full name" formControlName="name">
+            </label>
+            <label>
+              <span>Number</span>
+              <input type="text"
+                     name="number"
+                     placeholder="Your ID" formControlName="number">
+            </label>
+            <button type="submit">Translate</button>
+            <table class='table table-striped'>
+              <thead>
+                <tr>
+                  <th> Name</th>
+                  <th> Number</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{fName}}</td>
+                  <td>{{numberString}}</td> 
+                </tr>
+              </tbody>
+            </table>
+        </form>
+        </div>
+
+        <div *ngIf="msg" role="alert" class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            {{msg}}
+        </div>
+    </div>
+</div>
+
